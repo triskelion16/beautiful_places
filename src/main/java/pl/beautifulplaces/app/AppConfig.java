@@ -26,8 +26,8 @@ import org.springframework.web.servlet.view.JstlView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "pl.beatifulplaces")
-@EnableJpaRepositories(basePackages	= "pl.beatifulplaces.repository")
+@ComponentScan(basePackages = "pl.beautifulplaces")
+@EnableJpaRepositories(basePackages	= "pl.beautifulplaces.repository")
 @EnableTransactionManagement
 public class AppConfig extends WebMvcConfigurerAdapter {
 	

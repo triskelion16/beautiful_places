@@ -14,6 +14,6 @@ public interface PlaceRepository extends JpaRepository<Place, Long>{
 
 	List<Place> findAllByContinentId(Long id);
 	
-	@Query(value="select * from places where continent_id = ?1 order by created desc", nativeQuery = true)
-	List<Place> findAllByContinentIdOrderByCreated(Long id);
+	@Query(value="select * from places where continent_id = ?1 order by date desc", nativeQuery = true)
+	List<Place> findAllByContinentIdOrderByDate(Long id);
 }

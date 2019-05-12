@@ -26,7 +26,7 @@ public class PlaceService {
 
 	@Transactional
 	public List<Place> getPlacesByContinentId(Long id) {
-		List<Place> places = placeRepository.findAllByContinentIdOrderByCreated(id);
+		List<Place> places = placeRepository.findAllByContinentIdOrderByDate(id);
 
 		return places;
 	}
@@ -35,7 +35,7 @@ public class PlaceService {
 	public void addToDB(Place place) {
 		if (place.getJpg() != null) {
 			String imagePath = place.getJpg();
-			place.setJpg(encoder(imagePath));
+			//place.setJpg(encoder(imagePath));
 		}
 		
 		placeRepository.save(place);
@@ -45,7 +45,7 @@ public class PlaceService {
 	public void editDB(Place place) {
 		if (place.getJpg() != null) {
 			String imagePath = place.getJpg();
-			place.setJpg(encoder(imagePath));
+			//place.setJpg(encoder(imagePath));
 		}
 		
 		placeRepository.save(place);
@@ -55,7 +55,7 @@ public class PlaceService {
 	public Place getPlaceById(Long id) {
 
 		Place place = placeRepository.findOne(id);
-		String jpg = place.getJpg();
+		//String jpg = place.getJpg();
 
 		//product.setJpgFile(decoder(jpg));
 
@@ -68,9 +68,9 @@ public class PlaceService {
 	}
 
 	/******** JPG to String converter ************/
-	public static String encoder(String imagePath) {
-		String base64Image = "";
-		File file = new File(imagePath);
+//	public static String encoder(String imagePath) {
+//		String base64Image = "";
+//		File file = new File(imagePath);
 
 //		try (FileInputStream imageInFile = new FileInputStream(file)) {
 //			byte imageData[] = new byte[(int) file.length()];
@@ -81,9 +81,8 @@ public class PlaceService {
 //		} catch (IOException ioe) {
 //			System.out.println("Exception while reading the Image " + ioe);
 //		}
-
-		return base64Image;
-	}
+//		return base64Image;
+//	}
 
 	/******* String to JPG converter **************/
 	public static byte[] decoder(String base64Image) {

@@ -36,7 +36,7 @@ public class PlaceController {
 	}
 
 	/***** Index *******************************/
-	@GetMapping("/index")
+	@GetMapping("/")
 	public String homePage(Model model) {
 		model.addAttribute("africa", placeService.getPlacesByContinentId(1L));
 		model.addAttribute("america", placeService.getPlacesByContinentId(2L));
