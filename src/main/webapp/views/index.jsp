@@ -25,11 +25,11 @@
             <div>
                 <ul>
                     <li><a href="#">Home</a></li>
-                    <li class="media"><a href="#africa">Afryka</a></li>
-                    <li class="media"><a href="#america">Ameryka</a></li>
-                    <li class="media"><a href="#australia">Australia</a></li>
-                    <li class="media"><a href="#asia">Azja</a></li>
-                    <li class="media"><a href="#europe">Europa</a></li>
+                    <li class="zmedia"><a href="#africa">Afryka</a></li>
+                    <li class="zmedia"><a href="#america">Ameryka</a></li>
+                    <li class="zmedia"><a href="#australia">Australia</a></li>
+                    <li class="zmedia"><a href="#asia">Azja</a></li>
+                    <li class="zmedia"><a href="#europe">Europa</a></li>
                 </ul>
             </div>
         </nav>
@@ -59,16 +59,12 @@
         <section class="blog" id="africa">
             <div class="post">
                 <h2>&gt;&gt;&gt;&nbsp;AFRYKA&nbsp;&lt;&lt;&lt;</h2>
-
-				<p>Seb</p>
 				
 				<c:forEach var="africa" items="${africa}">
 				
-					<p>Hello</p>
-				
                 	<strong class="title">${africa.name}</strong>
                 	
-                	<!-->div class="images">
+                	<!--div class="images">
                 		<c:if test="${africa.jpg != null}">
 	                   		<div class="image-container">
 	                   			<img src="data:image/jpg;base64,${africa.jpg}" />
@@ -92,6 +88,25 @@
             <div class="post">
                 <h2>&gt;&gt;&gt;&nbsp;AMERYKA&nbsp;&lt;&lt;&lt;</h2>
 
+				<c:forEach var="america" items="${america}">
+				
+                	<strong class="title">${america.name}</strong>
+                	
+                	<!--div class="images">
+                		<c:if test="${america.jpg != null}">
+	                   		<div class="image-container">
+	                   			<img src="data:image/jpg;base64,${america.jpg}" />
+	                   	 	</div>
+	                   	 </c:if>
+               	    </div-->
+               	    
+               	    <p>${america.description}</p>
+               	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/edit/${america.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/delete/${america.id}"/>"><button>Usuń</button></a>
+                	</div>
+                </c:forEach>
 
             </div>
         </section>
@@ -101,6 +116,25 @@
             <div class="post">
                 <h2>&gt;&gt;&gt;&nbsp;AUSTRALIA&nbsp;&lt;&lt;&lt;</h2>
 
+				<c:forEach var="australia" items="${australia}">
+				
+                	<strong class="title">${australia.name}</strong>
+                	
+                	<!--div class="images">
+                		<c:if test="${australia.jpg != null}">
+	                   		<div class="image-container">
+	                   			<img src="data:image/jpg;base64,${australia.jpg}" />
+	                   	 	</div>
+	                   	 </c:if>
+               	    </div-->
+               	    
+               	    <p>${australia.description}</p>
+               	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/edit/${australia.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/delete/${australia.id}"/>"><button>Usuń</button></a>
+                	</div>
+                </c:forEach>
 
             </div>
         </section>
@@ -110,6 +144,25 @@
             <div class="post">
                 <h2>&gt;&gt;&gt;&nbsp;AZJA&nbsp;&lt;&lt;&lt;</h2>
 
+				<c:forEach var="asia" items="${asia}">
+				
+                	<strong class="title">${asia.name}</strong>
+                	
+                	<!--div class="images">
+                		<c:if test="${asia.jpg != null}">
+	                   		<div class="image-container">
+	                   			<img src="data:image/jpg;base64,${asia.jpg}" />
+	                   	 	</div>
+	                   	 </c:if>
+               	    </div-->
+               	    
+               	    <p>${asia.description}</p>
+               	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/edit/${asia.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/delete/${asia.id}"/>"><button>Usuń</button></a>
+                	</div>
+                </c:forEach>
 
             </div>
         </section>
@@ -118,6 +171,26 @@
         <section class="blog" id="europe">
             <div class="post">
                 <h2>&gt;&gt;&gt;&nbsp;EUROPA&nbsp;&lt;&lt;&lt;</h2>
+                
+                <c:forEach var="europe" items="${europe}">
+				
+                	<strong class="title">${europe.name}</strong>
+                	
+                	<!--div class="images">
+                		<c:if test="${europe.jpg != null}">
+	                   		<div class="image-container">
+	                   			<img src="data:image/jpg;base64,${europe.jpg}" />
+	                   	 	</div>
+	                   	 </c:if>
+               	    </div-->
+               	    
+               	    <p>${europe.description}</p>
+               	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/edit/${europe.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/delete/${europe.id}"/>"><button>Usuń</button></a>
+                	</div>
+                </c:forEach>
 
             </div>
         </section>

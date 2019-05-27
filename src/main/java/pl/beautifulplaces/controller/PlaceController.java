@@ -56,7 +56,7 @@ public class PlaceController {
 	@PostMapping("/add")
 	public String addPost(@ModelAttribute Place place) {
 		placeService.addToDB(place);
-		return "redirect:/index";
+		return "redirect:/";
 	}
 	
 	/***** EDIT *******************************/
@@ -69,13 +69,13 @@ public class PlaceController {
 	@PostMapping("/edit/{id}")
 	public String editPost(@ModelAttribute Place place) {
 		placeService.editDB(place);
-		return "redirect:/index";
+		return "redirect:/";
 	}
 	
 	/***** DELETE *******************************/
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable Long id) {
 		placeService.deleteFromDB(id);
-		return "redirect:/index";
+		return "redirect:/";
 	}
 }
