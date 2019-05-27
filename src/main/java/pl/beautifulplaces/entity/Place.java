@@ -39,7 +39,7 @@ public class Place {
 		this.description = description;
 		this.date = date;
 		this.continent = continent;
-		this.jpg = jpg;
+		this.jpg = jpg; //!!!!!!!!!!!!!!!!!!!!!!!!!!
 	}
 
 	public Long getId() {
@@ -83,5 +83,13 @@ public class Place {
 	public void setJpg(String jpg) {
 		this.jpg = jpg;
 	}
+
+	@Override
+	public String toString() {
+		return "Place [id=" + id + ", name=" + name + ", description=" + description + ", date=" + date + ", continent="
+				+ continent + ", jpg=" + jpg + "]";
+	}
+	
+	
 	
 }

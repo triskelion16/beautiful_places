@@ -51,7 +51,7 @@
 
         <div class="blog">
             <div class="buttons">
-                <button>Dodaj  nowy</button>
+                <a href="/BeautifulPlaces/addPost"><button>Dodaj nowy</button></a> 
             </div>
         </div>
         

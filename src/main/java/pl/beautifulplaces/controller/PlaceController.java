@@ -47,14 +47,15 @@ public class PlaceController {
 	}
 
 	/***** ADD *******************************/
-	@GetMapping("/add")
+	@GetMapping("/addPost")
 	public String addGet(Model model) {
 		model.addAttribute("places", new Place());
-		return "add";
+		return "addPost";
 	}
 	
-	@PostMapping("/add")
+	@PostMapping("/addPost")
 	public String addPost(@ModelAttribute Place place) {
+		System.out.println(place.toString());
 		placeService.addToDB(place);
 		return "redirect:/";
 	}
@@ -62,8 +63,10 @@ public class PlaceController {
 	/***** EDIT *******************************/
 	@GetMapping("/edit/{id}")
 	public String editGet(@PathVariable Long id, Model model) {
+		System.out.println("====================================================================");
+		System.out.println("!!!!!!!!!!!" + placeService.getPlaceById(id));
 		model.addAttribute("places", placeService.getPlaceById(id));
-		return "add";
+		return "addPost";
 	}
 	
 	@PostMapping("/edit/{id}")

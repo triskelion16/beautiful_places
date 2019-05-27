@@ -33,20 +33,20 @@ public class PlaceService {
 
 	@Transactional
 	public void addToDB(Place place) {
-		if (place.getJpg() != null) {
-			String imagePath = place.getJpg();
-			//place.setJpg(encoder(imagePath));
-		}
+//		if (place.getJpg() != null) {
+//			String imagePath = place.getJpg();
+//			//place.setJpg(encoder(imagePath));
+//		}
 		
 		placeRepository.save(place);
 	}
 	
 	@Transactional
 	public void editDB(Place place) {
-		if (place.getJpg() != null) {
-			String imagePath = place.getJpg();
-			//place.setJpg(encoder(imagePath));
-		}
+//		if (place.getJpg() != null) {
+//			String imagePath = place.getJpg();
+//			//place.setJpg(encoder(imagePath));
+//		}
 		
 		placeRepository.save(place);
 	}

@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,7 +24,7 @@ public class Continent {
 	@Max(value = 30)
 	private String name;
 
-	@OneToMany(mappedBy	= "continent")
+	@OneToMany(mappedBy	= "continent" ,fetch = FetchType.EAGER)
 	private List<Place> places;
 
 	
@@ -54,6 +55,11 @@ public class Continent {
 	}
 	public void setPlaces(List<Place> places) {
 		this.places = places;
+	}
+
+	@Override
+	public String toString() {
+		return "Continent [id=" + id + ", name=" + name + ", places=" + places + "]";
 	}
 	
 }
