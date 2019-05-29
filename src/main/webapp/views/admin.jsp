@@ -31,6 +31,8 @@
                     <li class="zmedia"><a href="#asia">Azja</a></li>
                     <li class="zmedia"><a href="#europe">Europa</a></li>
                 </ul>
+                
+                <p><a href="/BeautifulPlaces">*** LOGOUT ***</a>/p>
             </div>
         </nav>
         
@@ -48,6 +50,12 @@
 
             </div>
         </header>
+
+        <div class="blog">
+            <div class="buttons">
+                <a href="/BeautifulPlaces/admin/addPost"><button>Dodaj nowy</button></a> 
+            </div>
+        </div>
         
         <!--********* AFRICA **********************************************-->
         <section class="blog" id="africa">
@@ -68,6 +76,10 @@
                	    
                	    <p>${africa.description}</p>
                	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/admin/edit/${africa.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/admin/delete/${africa.id}"/>"><button>Usuń</button></a>
+                	</div>
                 </c:forEach>
 
             </div>
@@ -92,6 +104,10 @@
                	    
                	    <p>${america.description}</p>
                	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/admin/edit/${america.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/admin/delete/${america.id}"/>"><button>Usuń</button></a>
+                	</div>
                 </c:forEach>
 
             </div>
@@ -116,6 +132,10 @@
                	    
                	    <p>${australia.description}</p>
                	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/admin/edit/${australia.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/admin/delete/${australia.id}"/>"><button>Usuń</button></a>
+                	</div>
                 </c:forEach>
 
             </div>
@@ -140,6 +160,10 @@
                	    
                	    <p>${asia.description}</p>
                	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/admin/edit/${asia.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/admin/delete/${asia.id}"/>"><button>Usuń</button></a>
+                	</div>
                 </c:forEach>
 
             </div>
@@ -164,6 +188,10 @@
                	    
                	    <p>${europe.description}</p>
                	    
+               	    <div class="buttons">
+               	    	<a href="<c:url value="/admin/edit/${europe.id}"/>"><button>Edytuj</button></a>
+               	    	<a href="<c:url value="/admin/delete/${europe.id}"/>"><button>Usuń</button></a>
+                	</div>
                 </c:forEach>
 
             </div>
@@ -172,7 +200,6 @@
         <!--********* FOOTER **********************************************-->
         <footer>
             <a href="#"><span>&copy;PW-JavaEE - Projekt końcowy 2019</span></a>
-            <a href="/BeautifulPlaces/admin"><span>Admin panel</span></a>
         </footer>
         
     </body>

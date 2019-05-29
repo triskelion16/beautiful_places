@@ -54,6 +54,9 @@ public class PlaceService {
 	@Transactional
 	public Place getPlaceById(Long id) {
 
+		System.out.println("++++++++++++++++++++++++++++++++" + id);
+		
+		//System.out.println(placeRepository.findOne(id));
 		Place place = placeRepository.findOne(id);
 		//String jpg = place.getJpg();
 

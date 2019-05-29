@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import pl.beautifulplaces.entity.Continent;
 import pl.beautifulplaces.entity.Place;
+import pl.beautifulplaces.repository.PlaceRepository;
 import pl.beautifulplaces.service.ContinentService;
 import pl.beautifulplaces.service.PlaceService;
 
@@ -22,11 +24,14 @@ public class PlaceController {
 
 	private PlaceService placeService;
 	private ContinentService continentService;
+	
+	PlaceRepository placeRepository;
 
 	@Autowired
-	public PlaceController(PlaceService placeService, ContinentService continentService) {
+	public PlaceController(PlaceService placeService, ContinentService continentService, PlaceRepository placeRepository) {
 		this.placeService = placeService;
 		this.continentService = continentService;
+		this.placeRepository = placeRepository;
 	}
 	
 	
@@ -45,40 +50,59 @@ public class PlaceController {
 		model.addAttribute("europe", placeService.getPlacesByContinentId(5L));
 		return "index";
 	}
+	
+	/***** Admin *******************************/
+	@GetMapping("/admin")
+	public String adminPage(Model model) {
+		model.addAttribute("africa", placeService.getPlacesByContinentId(1L));
+		model.addAttribute("america", placeService.getPlacesByContinentId(2L));
+		model.addAttribute("australia", placeService.getPlacesByContinentId(3L));
+		model.addAttribute("asia", placeService.getPlacesByContinentId(4L));
+		model.addAttribute("europe", placeService.getPlacesByContinentId(5L));
+		return "admin";
+	}
 
 	/***** ADD *******************************/
-	@GetMapping("/addPost")
+	@GetMapping("/admin/addPost")
 	public String addGet(Model model) {
 		model.addAttribute("places", new Place());
-		return "addPost";
+		return "admin/addPost";
 	}
 	
-	@PostMapping("/addPost")
-	public String addPost(@ModelAttribute Place place) {
-		System.out.println(place.toString());
+	@PostMapping("/admin/addPost")
+	public String addPost(@ModelAttribute Place place, ModelMap modelMap) {
+		
+		//modelMap.addAttribute("places", place);
+		//System.out.println(place.toString());
 		placeService.addToDB(place);
-		return "redirect:/";
+		return "redirect:/admin";
 	}
 	
 	/***** EDIT *******************************/
-	@GetMapping("/edit/{id}")
+	@GetMapping("/admin/edit/{id}")
 	public String editGet(@PathVariable Long id, Model model) {
 		System.out.println("====================================================================");
-		System.out.println("!!!!!!!!!!!" + placeService.getPlaceById(id));
-		model.addAttribute("places", placeService.getPlaceById(id));
-		return "addPost";
+		//System.out.println("!!!!!!!!!!!" + placeService.getPlaceById(id));
+		
+		
+		model.addAttribute("places", new Place());
+		//model.addAttribute("places", placeRepository.findOne(id));
+		//model.addAttribute("places", placeService.getPlaceById(id));
+		
+		
+		return "admin/editPost";
 	}
 	
-	@PostMapping("/edit/{id}")
+	@PostMapping("/admin/edit/{id}")
 	public String editPost(@ModelAttribute Place place) {
 		placeService.editDB(place);
-		return "redirect:/";
+		return "redirect:/admin";
 	}
 	
 	/***** DELETE *******************************/
-	@GetMapping("/delete/{id}")
+	@GetMapping("/admin/delete/{id}")
 	public String delete(@PathVariable Long id) {
 		placeService.deleteFromDB(id);
-		return "redirect:/";
+		return "redirect:/admin";
 	}
 }

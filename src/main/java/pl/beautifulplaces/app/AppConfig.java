@@ -14,6 +14,8 @@ import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.validation.Validator;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
+import org.springframework.web.multipart.commons.CommonsMultipartResolver;
+import org.springframework.web.multipart.support.StandardServletMultipartResolver;
 import org.springframework.web.servlet.LocaleContextResolver;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
@@ -24,6 +26,7 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+@SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "pl.beautifulplaces")
@@ -42,6 +45,18 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 //        multipartResolver.setMaxUploadSize(1000000);
 //        return multipartResolver;
 //    }
+	
+	@Bean(name = "multipartResolver")
+	public CommonsMultipartResolver multipartResolver() {
+	    CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+	    multipartResolver.setMaxUploadSize(100000);
+	    return multipartResolver;
+	}
+	
+//	@Bean
+//	public StandardServletMultipartResolver multipartResolver() {
+//	    return new StandardServletMultipartResolver();
+//	}
 	
     
 
@@ -71,8 +86,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         viewResolver.setSuffix(".jsp");
         return viewResolver;
     }
-    
-    
 
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {

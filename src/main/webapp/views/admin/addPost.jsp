@@ -38,7 +38,7 @@
 	<div class="container">
 		<h2>Dodaj nowy post</h2>
 
-		<form:form method="post" modelAttribute="places">
+		<form:form method="post" modelAttribute="places" enctype="multipart/form-data">
 
 			<div class="form-group">
 				<label> Nazwa: <form:input class="form-control" path="name" />
@@ -61,6 +61,13 @@
 				<label> Obraz: <form:input id="jpg" class="form-control" path="jpg" />
 				</label>
 			</div>
+			
+			<!--table>
+        		<tr>
+            		<td>Select a file to upload</td>
+           			 <td><input type="file" name="jpg" /></td>
+       			 </tr>
+   		   </table-->
 
 			<input type="submit" class="btn btn-default" value="Dodaj">
 
