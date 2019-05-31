@@ -23,13 +23,13 @@
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script type="text/javascript">
 	
-	/* $(function(){
+	$(function(){
 	 $('#fiad1').change( function(event) {
-	 var tmppath = URL.createObjectURL(event.target.files[0]);
-	 $("img").fadeIn("slow").attr('src',tmppath);
-	 console.log(tmppath);
-	 });
-	 });   */
+	 	var tmppath = URL.createObjectURL(event.target.files[0]);
+	 	$("img").fadeIn("slow").attr('src',tmppath);
+	 	console.log(tmppath);
+	 	});
+	 });   
 	 
 	</script>
 
@@ -58,16 +58,10 @@
 			</div>
 
 			<div class="form-group">
-				<label> Obraz: <form:input id="jpg" class="form-control" path="jpg" />
+				<label> Obraz: <form:input id="jpg" class="form-control" path="jpgPath" />
 				</label>
 			</div>
 			
-			<!--table>
-        		<tr>
-            		<td>Select a file to upload</td>
-           			 <td><input type="file" name="jpg" /></td>
-       			 </tr>
-   		   </table-->
 
 			<input type="submit" class="btn btn-default" value="Dodaj">
 
@@ -76,9 +70,10 @@
 
 	</div>
 
-	<!--script type="text/javascript">
+	<script type="text/javascript">
 		var path = (window.URL || window.webkitURL).createObjectURL(file);
 		console.log('path', path);
-	</script-->
+	</script>
+	
 </body>
 </html>

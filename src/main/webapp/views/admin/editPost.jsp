@@ -38,7 +38,7 @@
 	<div class="container">
 		<h2>Edytuj post</h2>
 
-		<form:form method="post" modelAttribute="places">
+		<form:form method="post" modelAttribute="places" enctype="multipart/form-data">
 
 			<div class="form-group">
 				<label> Nazwa: <form:input class="form-control" path="name" />
@@ -58,7 +58,7 @@
 			</div>
 
 			<div class="form-group">
-				<label> Obraz: <form:input id="jpg" class="form-control" path="jpg" />
+				<label> Obraz: <form:input id="jpg" class="form-control" path="jpgPath" />
 				</label>
 			</div>
 

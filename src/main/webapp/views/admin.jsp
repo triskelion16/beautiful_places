@@ -66,13 +66,13 @@
 				
                 	<strong class="title">${africa.name}</strong>
                 	
-                	<!--div class="images">
+                	<div class="images">
                 		<c:if test="${africa.jpg != null}">
 	                   		<div class="image-container">
 	                   			<img src="data:image/jpg;base64,${africa.jpg}" />
 	                   	 	</div>
 	                   	 </c:if>
-               	    </div-->
+               	    </div>
                	    
                	    <p>${africa.description}</p>
                	    
@@ -94,13 +94,13 @@
 				
                 	<strong class="title">${america.name}</strong>
                 	
-                	<!--div class="images">
+                	<div class="images">
                 		<c:if test="${america.jpg != null}">
 	                   		<div class="image-container">
 	                   			<img src="data:image/jpg;base64,${america.jpg}" />
 	                   	 	</div>
 	                   	 </c:if>
-               	    </div-->
+               	    </div>
                	    
                	    <p>${america.description}</p>
                	    
@@ -122,13 +122,13 @@
 				
                 	<strong class="title">${australia.name}</strong>
                 	
-                	<!--div class="images">
+                	<div class="images">
                 		<c:if test="${australia.jpg != null}">
 	                   		<div class="image-container">
 	                   			<img src="data:image/jpg;base64,${australia.jpg}" />
 	                   	 	</div>
 	                   	 </c:if>
-               	    </div-->
+               	    </div>
                	    
                	    <p>${australia.description}</p>
                	    
@@ -150,13 +150,13 @@
 				
                 	<strong class="title">${asia.name}</strong>
                 	
-                	<!--div class="images">
+                	<div class="images">
                 		<c:if test="${asia.jpg != null}">
 	                   		<div class="image-container">
 	                   			<img src="data:image/jpg;base64,${asia.jpg}" />
 	                   	 	</div>
 	                   	 </c:if>
-               	    </div-->
+               	    </div>
                	    
                	    <p>${asia.description}</p>
                	    
@@ -178,13 +178,13 @@
 				
                 	<strong class="title">${europe.name}</strong>
                 	
-                	<!--div class="images">
+                	<div class="images">
                 		<c:if test="${europe.jpg != null}">
 	                   		<div class="image-container">
 	                   			<img src="data:image/jpg;base64,${europe.jpg}" />
 	                   	 	</div>
 	                   	 </c:if>
-               	    </div-->
+               	    </div>
                	    
                	    <p>${europe.description}</p>
                	    

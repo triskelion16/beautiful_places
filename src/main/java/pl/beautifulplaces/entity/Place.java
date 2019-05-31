@@ -1,5 +1,6 @@
 package pl.beautifulplaces.entity;
 
+import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name="places")
@@ -21,6 +23,7 @@ public class Place {
 	@Column(nullable = false)
 	private String name;
 	
+	@Column(length=500)
 	private String description;
 	private Date date = new Date();
 	
@@ -30,16 +33,24 @@ public class Place {
 	@Column(columnDefinition = "mediumtext")
 	private String jpg;
 	
+	@Transient
+	private String jpgPath;
+	
+	@Transient
+	private byte[] jpgByteArray;
+	
 
 	public Place() {}
 	
-	public Place(Long id, String name, String description, Date date, Continent continent, String jpg) {
+	public Place(Long id, String name, String description, Date date, Continent continent, String jpg, String jpgPath, byte[] jpgByteArray) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
 		this.date = date;
 		this.continent = continent;
 		this.jpg = jpg; //!!!!!!!!!!!!!!!!!!!!!!!!!!
+		this.jpgPath = jpgPath;
+		this.jpgByteArray = jpgByteArray;
 	}
 
 	public Long getId() {
@@ -83,11 +94,26 @@ public class Place {
 	public void setJpg(String jpg) {
 		this.jpg = jpg;
 	}
+	
+	public String getJpgPath() {
+		return jpgPath;
+	}
+	public void setJpgPath(String jpgPath) {
+		this.jpgPath = jpgPath;
+	}
+
+	public byte[] getJpgByteArray() {
+		return jpgByteArray;
+	}
+	public void setJpgByteArray(byte[] jpgByteArray) {
+		this.jpgByteArray = jpgByteArray;
+	}
 
 	@Override
 	public String toString() {
 		return "Place [id=" + id + ", name=" + name + ", description=" + description + ", date=" + date + ", continent="
-				+ continent + ", jpg=" + jpg + "]";
+				+ continent + ", jpg=" + jpg + ", jpgPath=" + jpgPath + ", jpgByteArray="
+				+ Arrays.toString(jpgByteArray) + "]";
 	}
 	
 	
