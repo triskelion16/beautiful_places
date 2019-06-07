@@ -46,6 +46,8 @@ public class PlaceService {
 	public void addToDB(Place place) {
 		if (place.getJpgPath() != null) {
 			String imagePath = place.getJpgPath();
+			System.out.println("______________________________________________________");
+			System.out.println(imagePath);
 			place.setJpg(encoder(imagePath));
 		}
 		

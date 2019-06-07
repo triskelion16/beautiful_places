@@ -171,8 +171,8 @@
         
         <!--********* FOOTER **********************************************-->
         <footer>
-            <a href="#"><span>&copy;PW-JavaEE - Projekt końcowy 2019</span></a>
-            <a href="/BeautifulPlaces/admin"><span>Admin panel</span></a>
+            <a href="#"><span>&copy;PW-JavaEE - Projekt końcowy 2019</span></a><br>
+            <a href="/BeautifulPlaces/admin"><button>Zaloguj się do panelu administracyjnego</button></a>
         </footer>
         
     </body>

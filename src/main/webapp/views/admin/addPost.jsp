@@ -69,11 +69,6 @@
 
 
 	</div>
-
-	<script type="text/javascript">
-		var path = (window.URL || window.webkitURL).createObjectURL(file);
-		console.log('path', path);
-	</script>
 	
 </body>
 </html>

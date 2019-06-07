@@ -31,9 +31,9 @@
                     <li class="zmedia"><a href="#asia">Azja</a></li>
                     <li class="zmedia"><a href="#europe">Europa</a></li>
                 </ul>
-                
-                <p><a href="/BeautifulPlaces">*** LOGOUT ***</a>/p>
             </div>
+            
+                <a href="<c:url value="/logout" />"><button style="background-color: red">Panel administracyjny - Wyloguj się</button></a>
         </nav>
         
         <!--********* HEADER **********************************************-->
