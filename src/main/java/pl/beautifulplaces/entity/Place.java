@@ -1,6 +1,5 @@
 package pl.beautifulplaces.entity;
 
-import java.util.Arrays;
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -12,47 +11,51 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+/**
+ * @author triskelion
+ *
+ * Hibernate - tabela: places
+ */
 @Entity
 @Table(name="places")
 public class Place {
 
+	// Hibernate - kolumna: id | klucz główny | automatyczna inkrementacja
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	// Hibernate - kolumna: name | pozycja wymagana
 	@Column(nullable = false)
 	private String name;
 	
+	// Hibernate - kolumna: description | do 500 znaków
 	@Column(length=500)
 	private String description;
+	
+	// Hibernate - kolumna date | data i czas utworzenia obiektu
 	private Date date = new Date();
 	
+	// Hibernate - kolumna: continent | relacja wiele do jednego z tabelą: continents
 	@ManyToOne
 	private Continent continent;
 	
+	// Hibernate - kolumna: jpg | zdjęcie zapisane jako ciąg znaków
 	@Column(columnDefinition = "mediumtext")
 	private String jpg;
 	
+	// Pole jpgPath nie jest zapisywane do bazy danych 
 	@Transient
 	private String jpgPath;
 	
-	@Transient
-	private byte[] jpgByteArray;
-	
 
+	/**
+	 * Konstruktor domyslny
+	 */
 	public Place() {}
-	
-	public Place(Long id, String name, String description, Date date, Continent continent, String jpg, String jpgPath, byte[] jpgByteArray) {
-		this.id = id;
-		this.name = name;
-		this.description = description;
-		this.date = date;
-		this.continent = continent;
-		this.jpg = jpg; //!!!!!!!!!!!!!!!!!!!!!!!!!!
-		this.jpgPath = jpgPath;
-		this.jpgByteArray = jpgByteArray;
-	}
 
+	//===== Getery i Setery =====
+	
 	public Long getId() {
 		return id;
 	}
@@ -101,21 +104,4 @@ public class Place {
 	public void setJpgPath(String jpgPath) {
 		this.jpgPath = jpgPath;
 	}
-
-	public byte[] getJpgByteArray() {
-		return jpgByteArray;
-	}
-	public void setJpgByteArray(byte[] jpgByteArray) {
-		this.jpgByteArray = jpgByteArray;
-	}
-
-	@Override
-	public String toString() {
-		return "Place [id=" + id + ", name=" + name + ", description=" + description + ", date=" + date + ", continent="
-				+ continent + ", jpg=" + jpg + ", jpgPath=" + jpgPath + ", jpgByteArray="
-				+ Arrays.toString(jpgByteArray) + "]";
-	}
-	
-	
-	
 }

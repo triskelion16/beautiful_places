@@ -37,6 +37,7 @@
         <!--********* HEADER **********************************************-->
         <header id="banner" >
             <div class="background">
+       		 <a href="/BeautifulPlaces/admin"><button>Zaloguj się</button></a>
                 <div class="main">
                     <div class="post">
                         <h1>BEAUTIFUL PLACES</h1><br><br>
@@ -172,7 +173,6 @@
         <!--********* FOOTER **********************************************-->
         <footer>
             <a href="#"><span>&copy;PW-JavaEE - Projekt końcowy 2019</span></a><br>
-            <a href="/BeautifulPlaces/admin"><button>Zaloguj się do panelu administracyjnego</button></a>
         </footer>
         
     </body>

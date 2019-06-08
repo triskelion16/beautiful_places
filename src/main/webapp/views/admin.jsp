@@ -33,7 +33,7 @@
                 </ul>
             </div>
             
-                <a href="<c:url value="/logout" />"><button style="background-color: red">Panel administracyjny - Wyloguj się</button></a>
+                <a href="<c:url value="/logout" />"><button style="background-color: red">Wyloguj się</button></a>
         </nav>
         
         <!--********* HEADER **********************************************-->
