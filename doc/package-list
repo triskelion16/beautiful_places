@@ -1,0 +1,6 @@
+pl.beautifulplaces.app
+pl.beautifulplaces.controller
+pl.beautifulplaces.entity
+pl.beautifulplaces.repository
+pl.beautifulplaces.service
+tests

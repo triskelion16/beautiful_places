@@ -2,6 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<!--****************************************************************************************************-->
+<!--                                    Autor: Marcin                                                   -->
+<!--****************************************************************************************************-->
+
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
@@ -21,17 +25,6 @@
 
 
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript">
-	
-	$(function(){
-	 $('#fiad1').change( function(event) {
-	 	var tmppath = URL.createObjectURL(event.target.files[0]);
-	 	$("img").fadeIn("slow").attr('src',tmppath);
-	 	console.log(tmppath);
-	 	});
-	 });   
-	 
-	</script>
 
 </head>
 <body>
@@ -66,7 +59,6 @@
 			<input type="submit" class="btn btn-default" value="Dodaj">
 
 		</form:form>
-
 
 	</div>
 	

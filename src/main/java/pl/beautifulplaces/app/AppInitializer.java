@@ -12,6 +12,11 @@ import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+/**
+ * @author Sebastian
+ *
+ * Klasa z której startuje aplikacja
+ */
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer implements WebApplicationInitializer {
 	
 	private String TMP_FOLDER = "/tmp"; 

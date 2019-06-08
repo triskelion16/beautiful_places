@@ -25,6 +25,13 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+
+/**
+ * 
+ * @author Sebastian
+ *
+ * Klasa konfiguracyjna aplikacji
+ */
 @SuppressWarnings("deprecation")
 @Configuration
 @EnableWebMvc
@@ -38,26 +45,12 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return new MultipartConfigElement("");
     }
 
-//    @Bean
-//    public MultipartResolver multipartResolver() {
-//        org.springframework.web.multipart.commons.CommonsMultipartResolver multipartResolver = new org.springframework.web.multipart.commons.CommonsMultipartResolver();
-//        multipartResolver.setMaxUploadSize(1000000);
-//        return multipartResolver;
-//    }
-	
 	@Bean(name = "multipartResolver")
 	public CommonsMultipartResolver multipartResolver() {
 	    CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
 	    multipartResolver.setMaxUploadSize(100000);
 	    return multipartResolver;
 	}
-	
-//	@Bean
-//	public StandardServletMultipartResolver multipartResolver() {
-//	    return new StandardServletMultipartResolver();
-//	}
-	
-    
 
 	@Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
@@ -90,7 +83,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
 		registry
 			.addResourceHandler("/resources/**")
-			.addResourceLocations("/static/");//.resourceChain(true);
+			.addResourceLocations("/static/");
 	}
     
 

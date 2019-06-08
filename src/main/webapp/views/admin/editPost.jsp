@@ -2,6 +2,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
+<!--****************************************************************************************************-->
+<!--                                    Autor: Marcin                                                   -->
+<!--****************************************************************************************************-->
+
 <!DOCTYPE html>
 <html lang="pl-PL">
 <head>
@@ -19,19 +23,7 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
-
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript">
-	
-	/* $(function(){
-	 $('#fiad1').change( function(event) {
-	 var tmppath = URL.createObjectURL(event.target.files[0]);
-	 $("img").fadeIn("slow").attr('src',tmppath);
-	 console.log(tmppath);
-	 });
-	 });   */
-	 
-	</script>
 
 </head>
 <body>
@@ -69,9 +61,5 @@
 
 	</div>
 
-	<!--script type="text/javascript">
-		var path = (window.URL || window.webkitURL).createObjectURL(file);
-		console.log('path', path);
-	</script-->
 </body>
 </html>

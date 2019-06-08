@@ -12,7 +12,7 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 /**
- * @author triskelion
+ * @author Marcin
  *
  * Hibernate - tabela: places
  */

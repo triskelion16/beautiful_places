@@ -5,6 +5,11 @@ import org.springframework.stereotype.Repository;
 
 import pl.beautifulplaces.entity.Continent;
 
+/**
+ * 
+ * @author Marcin
+ *
+ */
 @Repository
 public interface ContinentRepository extends JpaRepository<Continent, Long>{
 

@@ -15,6 +15,12 @@ import pl.beautifulplaces.repository.PlaceRepository;
 import pl.beautifulplaces.service.ContinentService;
 import pl.beautifulplaces.service.PlaceService;
 
+/**
+ * 
+ * @author Sebastian
+ *
+ * Mapowanie adresów URL
+ */
 @Controller
 @RequestMapping("/")
 public class PlaceController {

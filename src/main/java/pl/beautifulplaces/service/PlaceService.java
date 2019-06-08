@@ -1,16 +1,11 @@
 package pl.beautifulplaces.service;
 
-import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.util.Base64;
 import java.util.List;
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +13,11 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.beautifulplaces.entity.Place;
 import pl.beautifulplaces.repository.PlaceRepository;
 
+/**
+ * 
+ * @author Sebastian
+ *
+ */
 @Service
 public class PlaceService {
 

@@ -9,6 +9,11 @@ import org.springframework.transaction.annotation.Transactional;
 import pl.beautifulplaces.entity.Continent;
 import pl.beautifulplaces.repository.ContinentRepository;
 
+/**
+ * 
+ * @author Sebastian
+ *
+ */
 @Service
 public class ContinentService {
 
