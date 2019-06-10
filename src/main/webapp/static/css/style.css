@@ -9,7 +9,8 @@ html {
 }
 
 body {
-    background: #111111;
+    background-color: #111111;
+    color: #eeeeee;
 }
 
 /********* Buttons ********************************/
@@ -31,10 +32,6 @@ button {
 
 button:hover {
     font-weight: bold;
-}
-
-.buttons {
-    /*display: none;*/
 }
 
 /********** Nav *********************************/
@@ -131,7 +128,6 @@ nav li a:hover {
 
 p {
     min-width: 200px;
-    /*min-height: 200px;*/
 }
 
 .blog {
@@ -180,14 +176,6 @@ p {
 
 /********** Images ***********/
 
-/*.post .image-container {
-    width: 100%;
-}*/
-
-/*.images {
-    margin: 1%;
-}*/
-
 .image-container {
     overflow: hidden;
 }
@@ -220,4 +208,11 @@ footer a {
 footer span {
     font-family: 'Roboto', sans-serif;
     color: #999999;
+}
+
+/********** Form ****************/
+
+.form .form-control{
+	background-color: #222222;
+	color: #eeeeee;
 }

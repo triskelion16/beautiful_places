@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!--****************************************************************************************************-->
 <!--                                    Autor: Marcin                                                   -->
@@ -18,17 +19,14 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="css/css_reset.css">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
 
+	<link href='<spring:url value="/resources/css/css_reset.css"/>' rel="stylesheet" />	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-
-	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<link href='<spring:url value="/resources/css/style.css"/>' rel="stylesheet" />
 
 </head>
-<body>
-	<div class="container">
+<body class="form">
+	<div class="container"><br>
 		<h2>Dodaj nowy post</h2>
 
 		<form:form method="post" modelAttribute="places" enctype="multipart/form-data">

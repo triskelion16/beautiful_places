@@ -84,9 +84,9 @@ public class PlaceController {
 		System.out.println("====================================================================");
 		// System.out.println("!!!!!!!!!!!" + placeService.getPlaceById(id));
 
-		model.addAttribute("places", new Place());
+		//model.addAttribute("places", new Place());
 		// model.addAttribute("places", placeRepository.findOne(id));
-		// model.addAttribute("places", placeService.getPlaceById(id));
+		model.addAttribute("places", placeService.getPlaceById(id));
 
 		return "admin/editPost";
 	}

@@ -66,9 +66,9 @@ public class Continent {
 		this.places = places;
 	}
 
-	@Override
-	public String toString() {
-		return "Continent [id=" + id + ", name=" + name + ", places=" + places + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Continent [id=" + id + ", name=" + name + ", places=" + places + "]";
+//	}
 	
 }
