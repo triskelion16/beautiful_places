@@ -31,14 +31,6 @@ public class PlaceService {
 	@Transactional
 	public List<Place> getPlacesByContinentId(Long id) {
 		List<Place> places = placeRepository.findAllByContinentIdOrderByDate(id);
-		
-//		for (Place place : places) {
-//			if (place.getJpg() != null) {
-//				String jpg = place.getJpg();
-//				place.setJpgByteArray(decoder(jpg));
-//			}
-//		}
-
 		return places;
 	}
 
@@ -46,23 +38,10 @@ public class PlaceService {
 	public void addToDB(Place place) {
 		if (place.getJpgPath() != null) {
 			String imagePath = place.getJpgPath();
-			System.out.println("______________________________________________________");
-			System.out.println(imagePath);
 			place.setJpg(encoder(imagePath));
 		}
-		
-//		File jpgPath = new File(place.getJpgPath());
-//		try {
-//			byte[] jpg = Files.readAllBytes(jpgPath.toPath());
-//			place.setJpg(jpg);
-//		} catch (IOException e) {
-//			System.out.println("ERROR-------------------");
-//			e.printStackTrace();
-//		}
-				
-		//byte[] jpg = place.getJpg();
-		System.out.println("====================================================================");
-		System.out.println(place.toString());
+//		String imagePath = place.getJpgPath();
+//		place.setJpg(encoder(imagePath));
 		
 		placeRepository.save(place);
 	}
@@ -73,21 +52,15 @@ public class PlaceService {
 			String imagePath = place.getJpgPath();
 			place.setJpg(encoder(imagePath));
 		}
+//		String imagePath = place.getJpgPath();
+//		place.setJpg(encoder(imagePath));
 		
 		placeRepository.save(place);
 	}
 
 	@Transactional
 	public Place getPlaceById(Long id) {
-
-		System.out.println("++++++++++++++++++++++++++++++++" + id);
-		
-		//System.out.println(placeRepository.findOne(id));
 		Place place = placeRepository.findOne(id);
-		//String jpg = place.getJpg();
-
-		//product.setJpgFile(decoder(jpg));
-
 		return place;
 	}
 
@@ -111,13 +84,6 @@ public class PlaceService {
 			System.out.println("Exception while reading the Image " + ioe);
 		}
 		return base64Image;
-	}
-
-	/******* String to JPG converter **************/
-	public static byte[] decoder(String base64Image) {
-
-		byte[] imageByteArray = Base64.getDecoder().decode(base64Image);
-		return imageByteArray;
 	}
 
 }

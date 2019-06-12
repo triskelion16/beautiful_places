@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author Marcin
@@ -26,11 +29,13 @@ public class Place {
 	private Long id;
 	
 	// Hibernate - kolumna: name | pozycja wymagana
-	@Column(nullable = false)
+	@NotEmpty(message = "Pole nie może być puste!")
 	private String name;
 	
 	// Hibernate - kolumna: description | do 500 znaków
 	@Column(length=500)
+	@NotEmpty(message = "Pole nie może być puste!")
+	@Size(max=500, message = "Maksymalna ilość znaków to 500!")
 	private String description;
 	
 	// Hibernate - kolumna date | data i czas utworzenia obiektu

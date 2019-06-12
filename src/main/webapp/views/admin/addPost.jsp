@@ -32,12 +32,16 @@
 		<form:form method="post" modelAttribute="places" enctype="multipart/form-data">
 
 			<div class="form-group">
-				<label> Nazwa: <form:input class="form-control" path="name" />
+				<label> Nazwa:
+					<form:input class="form-control" path="name" />
+					<form:errors path="name" cssClass="error" />
 				</label>
 			</div>
 
 			<div class="form-group">
-				<label> Opis: <form:textarea rows="5" cols="50" type="text" class="form-control" path="description" />
+				<label> Opis: 
+					<form:textarea rows="5" cols="50" type="text" class="form-control" path="description" />
+					<form:errors path="description" cssClass="error" />
 				</label>
 			</div>
 
@@ -49,7 +53,8 @@
 			</div>
 
 			<div class="form-group">
-				<label> Obraz: <form:input id="jpg" class="form-control" path="jpgPath" />
+				<label> Obraz: 
+					<form:input id="jpg" class="form-control" path="jpgPath" />
 				</label>
 			</div>
 			

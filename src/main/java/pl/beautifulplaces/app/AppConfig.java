@@ -12,8 +12,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.validation.Validator;
-import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.LocaleContextResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -86,7 +84,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 			.addResourceLocations("/static/");
 	}
     
-
 	@Bean(name = "localeResolver")
     public LocaleContextResolver getLocaleContextResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
@@ -94,8 +91,4 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return localeResolver;
     }
     
-    @Bean
-    public Validator validator() {
-        return new LocalValidatorFactoryBean();
-    }
 }

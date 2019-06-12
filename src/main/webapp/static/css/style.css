@@ -216,3 +216,7 @@ footer span {
 	background-color: #222222;
 	color: #eeeeee;
 }
+
+.error {
+	color: red;
+}

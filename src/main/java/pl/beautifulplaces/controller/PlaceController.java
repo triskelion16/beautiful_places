@@ -1,9 +1,13 @@
 package pl.beautifulplaces.controller;
 
 import java.util.List;
+
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.beautifulplaces.entity.Continent;
 import pl.beautifulplaces.entity.Place;
-import pl.beautifulplaces.repository.PlaceRepository;
 import pl.beautifulplaces.service.ContinentService;
 import pl.beautifulplaces.service.PlaceService;
 
@@ -28,14 +31,11 @@ public class PlaceController {
 	private PlaceService placeService;
 	private ContinentService continentService;
 
-	PlaceRepository placeRepository;
 
 	@Autowired
-	public PlaceController(PlaceService placeService, ContinentService continentService,
-			PlaceRepository placeRepository) {
+	public PlaceController(PlaceService placeService, ContinentService continentService) {
 		this.placeService = placeService;
 		this.continentService = continentService;
-		this.placeRepository = placeRepository;
 	}
 
 	@ModelAttribute("continents")
@@ -73,7 +73,11 @@ public class PlaceController {
 	}
 
 	@PostMapping("/admin/addPost")
-	public String addPost(@ModelAttribute Place place) {
+	public String addPost(@Valid @ModelAttribute("places") Place place, BindingResult result) {
+		if(result.hasErrors()) {
+			return "/admin/addPost";
+		}
+		
 		placeService.addToDB(place);
 		return "redirect:/admin";
 	}
@@ -81,18 +85,17 @@ public class PlaceController {
 	/***** EDIT *******************************/
 	@GetMapping("/admin/edit/{id}")
 	public String editGet(@PathVariable Long id, Model model) {
-		System.out.println("====================================================================");
-		// System.out.println("!!!!!!!!!!!" + placeService.getPlaceById(id));
-
-		//model.addAttribute("places", new Place());
-		// model.addAttribute("places", placeRepository.findOne(id));
 		model.addAttribute("places", placeService.getPlaceById(id));
 
 		return "admin/editPost";
 	}
 
 	@PostMapping("/admin/edit/{id}")
-	public String editPost(@ModelAttribute Place place) {
+	public String editPost(@Valid @ModelAttribute("places") Place place, BindingResult result) {
+		if(result.hasErrors()) {
+			return "admin/editPost";
+		}
+		
 		placeService.editDB(place);
 		return "redirect:/admin";
 	}
