@@ -53,6 +53,12 @@ public class Place {
 	@Transient
 	private String jpgPath;
 	
+	// Hibernate - kolumna: details | do 500 znaków
+	@Column(length=5000)
+	@NotEmpty(message = "Pole nie może być puste!")
+	@Size(max=5000, message = "Maksymalna ilość znaków to 5000!")
+	private String details;
+	
 
 	/**
 	 * Konstruktor domyslny
@@ -108,5 +114,12 @@ public class Place {
 	}
 	public void setJpgPath(String jpgPath) {
 		this.jpgPath = jpgPath;
+	}
+
+	public String getDetails() {
+		return details;
+	}
+	public void setDetails(String details) {
+		this.details = details;
 	}
 }

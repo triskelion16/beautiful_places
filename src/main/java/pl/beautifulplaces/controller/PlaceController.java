@@ -106,4 +106,12 @@ public class PlaceController {
 		placeService.deleteFromDB(id);
 		return "redirect:/admin";
 	}
+	
+	/***** DETAILS *******************************/
+	@GetMapping("/details/{id}")
+	public String detailsGet(@PathVariable Long id, Model model) {
+		model.addAttribute("places", placeService.getPlaceById(id));
+
+		return "details";
+	}
 }

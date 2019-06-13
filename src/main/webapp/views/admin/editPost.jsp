@@ -46,6 +46,13 @@
 			</div>
 			
 			<div class="form-group">
+				<label> Szczegóły: 
+					<form:textarea rows="15" cols="50" type="text" class="form-control" path="details" />
+					<form:errors path="details" cssClass="error" />
+				</label>
+			</div>
+			
+			<div class="form-group">
 				<label> Kontynent: <form:select itemLabel="name" itemValue="id" class="form-control" path="continent.id" items="${continents}" />
 				</label>
 			</div>

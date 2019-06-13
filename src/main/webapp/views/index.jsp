@@ -66,7 +66,9 @@
                 	<div class="images">
                 		<c:if test="${africa.jpg != null}">
 	                   		<div class="image-container">
-	                   			<img src="data:image/jpg;base64,${africa.jpg}" />
+	                   			<a href="<c:url value="/details/${africa.id}"/>">
+	                   				<img src="data:image/jpg;base64,${africa.jpg}" />
+	                   			</a>
 	                   	 	</div>
 	                   	 </c:if>
                	    </div>
@@ -90,7 +92,9 @@
                 	<div class="images">
                 		<c:if test="${america.jpg != null}">
 	                   		<div class="image-container">
-	                   			<img src="data:image/jpg;base64,${america.jpg}" />
+	                   			<a href="<c:url value="/details/${america.id}"/>">
+	                   				<img src="data:image/jpg;base64,${america.jpg}" />
+	                   			</a>
 	                   	 	</div>
 	                   	 </c:if>
                	    </div>
@@ -114,7 +118,9 @@
                 	<div class="images">
                 		<c:if test="${australia.jpg != null}">
 	                   		<div class="image-container">
-	                   			<img src="data:image/jpg;base64,${australia.jpg}" />
+	                   			<a href="<c:url value="/details/${australia.id}"/>">
+	                   				<img src="data:image/jpg;base64,${australia.jpg}" />
+	                   			</a>
 	                   	 	</div>
 	                   	 </c:if>
                	    </div>
@@ -138,7 +144,9 @@
                 	<div class="images">
                 		<c:if test="${asia.jpg != null}">
 	                   		<div class="image-container">
-	                   			<img src="data:image/jpg;base64,${asia.jpg}" />
+	                   			<a href="<c:url value="/details/${asia.id}"/>">
+	                   				<img src="data:image/jpg;base64,${asia.jpg}" />
+	                   			</a>
 	                   	 	</div>
 	                   	 </c:if>
                	    </div>
@@ -162,7 +170,9 @@
                 	<div class="images">
                 		<c:if test="${europe.jpg != null}">
 	                   		<div class="image-container">
-	                   			<img src="data:image/jpg;base64,${europe.jpg}" />
+	                   			<a href="<c:url value="/details/${europe.id}"/>">
+	                   				<img src="data:image/jpg;base64,${europe.jpg}" />
+	                   			</a>
 	                   	 	</div>
 	                   	 </c:if>
                	    </div>
