@@ -65,10 +65,5 @@ public class Continent {
 	public void setPlaces(List<Place> places) {
 		this.places = places;
 	}
-
-//	@Override
-//	public String toString() {
-//		return "Continent [id=" + id + ", name=" + name + ", places=" + places + "]";
-//	}
 	
 }

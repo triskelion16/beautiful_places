@@ -31,19 +31,34 @@ public class PlaceController {
 	private PlaceService placeService;
 	private ContinentService continentService;
 
-
+	/**
+	 * Konstruktor - wstrzykiwanie zależności
+	 * 
+	 * @param placeService - instancja klasy PlaceService
+	 * @param continentService - instancja klasy ContinentService
+	 */
 	@Autowired
 	public PlaceController(PlaceService placeService, ContinentService continentService) {
 		this.placeService = placeService;
 		this.continentService = continentService;
 	}
 
+	/**
+	 * 
+	 * @return - zwraca listę kontynentów pobraną z bazy danych
+	 */
 	@ModelAttribute("continents")
 	public List<Continent> getContinents() {
 		return continentService.getContinents();
 	}
 
 	/***** Index *******************************/
+	/**
+	 * Mapowanie adresu "/" 
+	 * 
+	 * @param model - dodanie atrybutów do widoku pobranych z bazy danych
+	 * @return - wyświetlenie widoku index.jsp
+	 */
 	@GetMapping("/")
 	public String homePage(Model model) {
 		model.addAttribute("africa", placeService.getPlacesByContinentId(1L));
@@ -55,6 +70,13 @@ public class PlaceController {
 	}
 
 	/***** Admin *******************************/
+	/**
+	 * Mapowanie adresu "/admin" 
+	 * Akcja dostępna po zalogowaniu
+	 * 
+	 * @param model - dodanie atrybutów do widoku pobranych z bazy danych
+	 * @return - wyświetlenie widoku admin.jsp
+	 */
 	@GetMapping("/admin")
 	public String adminPage(Model model) {
 		model.addAttribute("africa", placeService.getPlacesByContinentId(1L));
@@ -66,12 +88,28 @@ public class PlaceController {
 	}
 
 	/***** ADD *******************************/
+	/**
+	 * Mapowanie adresu "/admin/addPost" - wyświetlenie formularza
+	 * Akcja dostępna po zalogowaniu
+	 * 
+	 * @param model - dodanie atrybutu dla nowej instancji klasy Place
+	 * @return - wyświetlenie widoku addPost.jsp
+	 */
 	@GetMapping("/admin/addPost")
 	public String addGet(Model model) {
 		model.addAttribute("places", new Place());
 		return "admin/addPost";
 	}
 
+	/**
+	 * Mapowanie adresu "/admin/addPost" - przesłanie formularza
+	 * Akcja dostępna po zalogowaniu 
+	 * 
+	 * @param place - obiekt klasy Place przekazany do zapisania w bazie danych 
+	 * @param result - instancja klasy do walidacji formularzy
+	 * @return - wyświetlenie widoku admin.jsp - jeśli formularz poprawnie wypełniony
+	 * @return - powrót do widoku addPost.jsp - jeśli formularz niepoprawnie wypełniony
+	 */
 	@PostMapping("/admin/addPost")
 	public String addPost(@Valid @ModelAttribute("places") Place place, BindingResult result) {
 		if(result.hasErrors()) {
@@ -83,6 +121,14 @@ public class PlaceController {
 	}
 
 	/***** EDIT *******************************/
+	/**
+	 * Mapowanie adresu "/admin/edit/{id}" - wyświetlenie formularza
+	 * Akcja dostępna po zalogowaniu 
+	 * 
+	 * @param id - identyfikator rekordu w bazie danych
+	 * @param model - dodanie atrybutu dla edytowanej instancji klasy Place
+	 * @return - wyświetlenie widoku editPost.jsp
+	 */
 	@GetMapping("/admin/edit/{id}")
 	public String editGet(@PathVariable Long id, Model model) {
 		model.addAttribute("places", placeService.getPlaceById(id));
@@ -90,6 +136,15 @@ public class PlaceController {
 		return "admin/editPost";
 	}
 
+	/**
+	 * Mapowanie adresu "/admin/edit/{id}" - przesłanie formularza
+	 * Akcja dostępna po zalogowaniu 
+	 * 
+	 * @param place - obiekt klasy Place przekazany do zapisania w bazie danych 
+	 * @param result - instancja klasy do walidacji formularzy
+	 * @return - wyświetlenie widoku admin.jsp - jeśli formularz poprawnie wypełniony
+	 * @return - powrót do widoku editPost.jsp - jeśli formularz niepoprawnie wypełniony
+	 */
 	@PostMapping("/admin/edit/{id}")
 	public String editPost(@Valid @ModelAttribute("places") Place place, BindingResult result) {
 		if(result.hasErrors()) {
@@ -101,6 +156,13 @@ public class PlaceController {
 	}
 
 	/***** DELETE *******************************/
+	/**
+	 * Mapowanie adresu "/admin/delete/{id}" - przesłanie formularza
+	 * Akcja dostępna po zalogowaniu 
+	 * 
+	 * @param id - identyfikator rekordu w bazie danych
+	 * @return - wyświetlenie widoku admin.jsp
+	 */
 	@GetMapping("/admin/delete/{id}")
 	public String delete(@PathVariable Long id) {
 		placeService.deleteFromDB(id);
@@ -108,6 +170,13 @@ public class PlaceController {
 	}
 	
 	/***** DETAILS *******************************/
+	/**
+	 * Mapowanie adresu "/admin/delete/{id}" - przesłanie formularza
+	 * 
+	 * @param id - identyfikator rekordu w bazie danych
+	 * @param model - dodanie atrybutu do widoku pobranego z bazy danych
+	 * @return - wyświetlenie widoku details.jsp
+	 */
 	@GetMapping("/details/{id}")
 	public String detailsGet(@PathVariable Long id, Model model) {
 		model.addAttribute("places", placeService.getPlaceById(id));

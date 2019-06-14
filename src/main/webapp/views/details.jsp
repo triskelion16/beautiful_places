@@ -11,7 +11,7 @@
 <html lang="pl-PL">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Beatiful Places</title>
+<title>Beautiful Places</title>
 <meta name="description" content="">
 <meta name="keywords" content="">
 
