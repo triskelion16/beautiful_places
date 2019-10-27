@@ -11,7 +11,7 @@ import pl.beautifulplaces.entity.Place;
 
 /**
  * 
- * @author Marcin
+ * @author Sebastian
  *
  */
 @Repository

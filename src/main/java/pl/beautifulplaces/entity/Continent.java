@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 /**
- * @author Marcin
+ * @author Sebastian
  *
  * Hibernate - tabela: continents
  */

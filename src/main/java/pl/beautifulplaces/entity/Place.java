@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
- * @author Marcin
+ * @author Sebastian
  *
  * Hibernate - tabela: places
  */

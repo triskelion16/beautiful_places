@@ -7,7 +7,7 @@ import pl.beautifulplaces.entity.Continent;
 
 /**
  * 
- * @author Marcin
+ * @author Sebastian
  *
  */
 @Repository
